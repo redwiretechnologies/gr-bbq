@@ -1,0 +1,19 @@
+id: bbq_packet_to_zmq
+label: Packet to ZeroMQ
+category: '[BBQ]'
+
+templates:
+  imports: from gnuradio import bbq
+  make: bbq.packet_to_zmq(${address})
+
+parameters:
+- id: address
+  label: Address
+  dtype: string
+  default: "tcp://*:4001"
+
+inputs:
+- label: packet_in
+  domain: message
+
+file_format: 1
